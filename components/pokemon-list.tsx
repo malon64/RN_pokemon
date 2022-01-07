@@ -9,7 +9,6 @@ export default function PokemonList({navigation}: {navigation: any}) {
   const [fontsLoaded] = useFonts({
     'PressStart2P': require('../assets/fonts/PressStart2P-Regular.ttf'),
   });
-  const [pokemonList, setPokemonList] = useState([{id: 1, name: "bulbizarre"}, {id: 2, name: "carapuce"}]);
 
   if (isLoading || !fontsLoaded) {
     return <View></View>;
