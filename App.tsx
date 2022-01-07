@@ -1,20 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {Provider} from 'react-redux';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import PokemonList from './components/pokemon-list';
+import {store} from './store';
+import PokemonView from './components/pokemon-view';
 
+const Stack = createNativeStackNavigator();
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+  <Provider store={store}>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+        name="PokemonList"
+        component={PokemonList}
+        options={{ title: 'Pokemons' }}
+        />
+        <Stack.Screen
+        name="PokemonView"
+        component={PokemonView}
+        options={{ title: 'Sprite' }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  </Provider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
