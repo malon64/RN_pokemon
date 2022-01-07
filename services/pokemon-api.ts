@@ -7,7 +7,7 @@ export const pokemonApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://pokeapi.co/api/v2/' }),
   endpoints: (builder) => ({
     getPokemons: builder.query<any, string>({
-        query: () => `pokemon?limit=150`,
+        query: () => `pokemon?limit=400`,//We can think about an infinite scroll that will call the api multiple time and keep the cache memory safe
       }), 
     getPokemonByName: builder.query<Pokemon, string>({
       query: (name) => `pokemon/${name}`,
