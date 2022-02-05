@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "azot_pokemon",
-    "slug": "azot_pokemon",
+    "name": "RN_pokemon",
+    "slug": "RN_pokemon",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/pokeball.png",
